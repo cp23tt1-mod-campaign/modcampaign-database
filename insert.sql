@@ -34,11 +34,19 @@ INSERT INTO Feedback (feedbackId, subject, description, date, userId) VALUES
 INSERT INTO User_in_Campaign (userId, campaignId) VALUES
 (1, 1),
 (2, 1),
-(3, 2),
-(4, 3),
-(5, 5),
-(1, 2),
-(2, 3),
-(3, 4),
 (4, 1),
-(5, 2);
+(5, 1),
+(1, 2),
+(3, 2),
+(5, 2),
+(1, 3),
+(2, 3),
+(3, 3),
+(4, 3),
+(5, 3),
+(3, 4),
+(5, 5);
+
+
+
+
