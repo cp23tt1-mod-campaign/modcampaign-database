@@ -72,7 +72,7 @@ CREATE TABLE `campaignCategory` (
 
 LOCK TABLES `campaignCategory` WRITE;
 /*!40000 ALTER TABLE `campaignCategory` DISABLE KEYS */;
-INSERT INTO `campaigncategory` VALUES (1,'Run','step'),(2,'Education','Supporting education initiatives'),(3,'Health and Fitness','Stay active and fit'),(4,'Arts and Culture','Promoting arts and cultural activities'),(5,'Environment','Environment conservation and awareness');
+INSERT INTO `campaignCategory` VALUES (1,'Run','step'),(2,'Education','Supporting education initiatives'),(3,'Health and Fitness','Stay active and fit'),(4,'Arts and Culture','Promoting arts and cultural activities'),(5,'Environment','Environment conservation and awareness');
 /*!40000 ALTER TABLE `campaignCategory` ENABLE KEYS */;
 UNLOCK TABLES;
 
