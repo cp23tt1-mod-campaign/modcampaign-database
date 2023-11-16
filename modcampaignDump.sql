@@ -1,5 +1,5 @@
-CREATE DATABASE  IF NOT EXISTS `modcampaign` /*!40100 DEFAULT CHARACTER SET utf8 */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `modcampaign`;
+CREATE DATABASE  IF NOT EXISTS `ModCampaign` /*!40100 DEFAULT CHARACTER SET utf8 */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `ModCampaign`;
 -- MySQL dump 10.13  Distrib 8.0.26, for Win64 (x86_64)
 --
 -- Host: localhost    Database: modcampaign
@@ -170,3 +170,9 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2023-11-16  3:56:47
+
+CREATE USER 'admin'@'%' IDENTIFIED WITH mysql_native_password BY 'trimitr56';
+GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%';
+flush privileges;
+set time_zone = '+7:00';
+set global time_zone = '+7:00';
