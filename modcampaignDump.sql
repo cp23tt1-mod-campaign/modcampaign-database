@@ -54,10 +54,10 @@ UNLOCK TABLES;
 -- Table structure for table `campaigncategory`
 --
 
-DROP TABLE IF EXISTS `campaigncategory`;
+DROP TABLE IF EXISTS `campaignCategory`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `campaigncategory` (
+CREATE TABLE `campaignCategory` (
   `campaignCategoryId` int NOT NULL,
   `categoryName` varchar(50) NOT NULL,
   `categoryTarget` varchar(50) NOT NULL,
@@ -70,10 +70,10 @@ CREATE TABLE `campaigncategory` (
 -- Dumping data for table `campaigncategory`
 --
 
-LOCK TABLES `campaigncategory` WRITE;
-/*!40000 ALTER TABLE `campaigncategory` DISABLE KEYS */;
+LOCK TABLES `campaignCategory` WRITE;
+/*!40000 ALTER TABLE `campaignCategory` DISABLE KEYS */;
 INSERT INTO `campaigncategory` VALUES (1,'Run','step'),(2,'Education','Supporting education initiatives'),(3,'Health and Fitness','Stay active and fit'),(4,'Arts and Culture','Promoting arts and cultural activities'),(5,'Environment','Environment conservation and awareness');
-/*!40000 ALTER TABLE `campaigncategory` ENABLE KEYS */;
+/*!40000 ALTER TABLE `campaignCategory` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -140,10 +140,10 @@ UNLOCK TABLES;
 -- Table structure for table `user_in_campaign`
 --
 
-DROP TABLE IF EXISTS `user_in_campaign`;
+DROP TABLE IF EXISTS `userInCampaign`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `user_in_campaign` (
+CREATE TABLE `userInCampaign` (
   `userId` int NOT NULL,
   `campaignId` int NOT NULL,
   PRIMARY KEY (`userId`,`campaignId`)
@@ -154,10 +154,10 @@ CREATE TABLE `user_in_campaign` (
 -- Dumping data for table `user_in_campaign`
 --
 
-LOCK TABLES `user_in_campaign` WRITE;
-/*!40000 ALTER TABLE `user_in_campaign` DISABLE KEYS */;
-INSERT INTO `user_in_campaign` VALUES (1,1),(1,2),(1,3),(2,1),(2,3),(3,2),(3,3),(3,4),(4,1),(4,3),(5,1),(5,2),(5,3),(5,5);
-/*!40000 ALTER TABLE `user_in_campaign` ENABLE KEYS */;
+LOCK TABLES `userInCampaign` WRITE;
+/*!40000 ALTER TABLE `userInCampaign` DISABLE KEYS */;
+INSERT INTO `userInCampaign` VALUES (1,1),(1,2),(1,3),(2,1),(2,3),(3,2),(3,3),(3,4),(4,1),(4,3),(5,1),(5,2),(5,3),(5,5);
+/*!40000 ALTER TABLE `userInCampaign` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
