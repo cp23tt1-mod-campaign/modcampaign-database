@@ -25,7 +25,7 @@ DROP TABLE IF EXISTS `campaign`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `campaign` (
-  `campaignId` int NOT NULL,
+  `campaignId` int NOT NULL AUTO_INCREMENT,
   `campaignName` varchar(50) NOT NULL,
   `campaignDetail` varchar(500) NOT NULL,
   `campaignStart` datetime NOT NULL,
@@ -58,7 +58,7 @@ DROP TABLE IF EXISTS `campaignCategory`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `campaignCategory` (
-  `campaignCategoryId` int NOT NULL,
+  `campaignCategoryId` int NOT NULL AUTO_INCREMENT,
   `categoryName` varchar(50) NOT NULL,
   `categoryTarget` varchar(50) NOT NULL,
   PRIMARY KEY (`campaignCategoryId`),
@@ -84,7 +84,7 @@ DROP TABLE IF EXISTS `feedback`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `feedback` (
-  `feedbackId` int NOT NULL,
+  `feedbackId` int NOT NULL AUTO_INCREMENT,
   `subject` varchar(50) NOT NULL,
   `description` varchar(500) NOT NULL,
   `date` datetime NOT NULL,
@@ -111,7 +111,7 @@ DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user` (
-  `userId` int NOT NULL,
+  `userId` int NOT NULL AUTO_INCREMENT,
   `username` varchar(50) NOT NULL,
   `password` varchar(150) NOT NULL,
   `firstName` varchar(50) NOT NULL,
