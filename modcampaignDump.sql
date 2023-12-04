@@ -31,7 +31,8 @@ CREATE TABLE `campaign` (
   `campaignStart` datetime NOT NULL,
   `campaignEnd` datetime NOT NULL,
   `campaignType` enum('Individual','Group') NOT NULL,
-  `campaignImageUrl` varchar(45) NOT NULL,
+  `campaignImageUrl` varchar(50) NOT NULL,
+  `campaignReward` varchar(50) NOT NULL,
   `campaignUserLimit` int DEFAULT NULL,
   `campaignCategoryId` int NOT NULL,
   `userId` int NOT NULL,
@@ -46,7 +47,16 @@ CREATE TABLE `campaign` (
 
 LOCK TABLES `campaign` WRITE;
 /*!40000 ALTER TABLE `campaign` DISABLE KEYS */;
-INSERT INTO `campaign` VALUES (1,'Fitness Challenge','Join our fitness challenge to stay healthy and active.','2023-11-20 08:00:00','2023-12-20 20:00:00','Individual','image1.jpg',100,1,1),(2,'Education for All','Support education for underprivileged children.','2023-12-01 10:00:00','2023-12-31 18:00:00','Group','image2.jpg',50,2,3),(3,'Community Cleanup','Volunteer for a cleaner and greener community.','2023-11-25 09:00:00','2023-12-15 17:00:00','Group','image3.jpg',30,3,1),(4,'Art Exhibition','Promoting local art and culture through an exhibition.','2023-12-10 12:00:00','2023-12-20 22:00:00','Individual','image4.jpg',NULL,4,2),(5,'Green Initiative','Join us in conserving the environment for a better future.','2023-11-30 14:00:00','2023-12-31 23:59:59','Individual','image5.jpg',200,5,4);
+INSERT INTO `campaign` VALUES 
+
+(1,'Fitness Challenge','ชวนคุณมาวิ่งออกกำลังกายรูปแบบใหม่ สไตล์ New Normal เพิ่มพลังให้ปอด ช่วยให้หัวใจแข็งแรง เริ่มวิ่งตั้งแต่วันที่ 20 พ.ย. – 20 ธันวาคม 2565 นี้ ซึ่งโครงการเปิดรับสมัครทั้งสมาชิกพีอาร์ไนน์ และบุคคลทั่วไป โดยการสะสมระยะทางรวมทั้งหมด 55 กม. สถานที่วิ่ง สามารถวิ่งได้ที่สวนสาธารณะ, ถนน, ซอย, ในหมู่บ้าน หรือวิ่งบนลู่ไฟฟ้า ตัดสินผู้ชนะตามระยะทางการวิ่งสะสมมากที่สุดหลังจบโครงการ พร้อมรางวัลมากมาย',
+'2023-11-20 08:00:00','2023-12-20 20:00:00','Individual','1MypsdJZdW_dI-vOPj73-g0G1lXurFHSe', 'ชั่วโมงกิจกรรม 10 ชั่วโมง' ,100,1,1),
+(2,'Education for All','Support education for underprivileged children.','2023-12-01 10:00:00','2023-12-31 18:00:00','Group','14mYFSuAO47M4XgU8hhPftiTU8XjgeHbV','ชั่วโมงกิจกรรม 2 ชั่วโมง' ,50,2,3),
+(3,'Community Cleanup','Volunteer for a cleaner and greener community.','2023-11-25 09:00:00','2023-12-15 17:00:00','Group','1H7gm2116tfNqZwhqH2T5zE6RwsiQyCPx','ขนม 1 แพ็ค',30,3,1),
+(4,'Art Exhibition','Promoting local art and culture through an exhibition.','2023-12-10 12:00:00','2023-12-20 22:00:00','Individual','1p8nBxD42Hy_XR8R9zw29RhNu677ODxmE','Coupon Starbuck',NULL,4,2),
+(5,'Green Initiative','Join us in conserving the environment for a better future.','2023-11-30 14:00:00','2023-12-31 23:59:59','Individual','1w1rMC2LZCu-MSPfQBYqGdlCFrUU04GAY','7-11 Gift Vocher',200,5,1),
+(6,'Bike for dad','มาวิ่งเพื่อพ่อกันนนนนน','2023-11-26 09:00:00','2023-12-26 17:00:00','Individual','1DjbfGHS2SzhYmnFU9CHz_-kx-9M_b4Dw','อันดับ 1 500 บาท อันดับ 2 100 บาท อันดับ 3 50 บาท',200,5,1),
+(7,'Run for mom','มาวิ่งเพื่อแม่กานนน','2023-9-26 09:00:00','2023-10-26 17:00:00','Individual','1lfralmU5KOISUraCbcznPfF1EtvdtZTT','ได้ออกกำลังกาย',200,5,1);
 /*!40000 ALTER TABLE `campaign` ENABLE KEYS */;
 UNLOCK TABLES;
 
