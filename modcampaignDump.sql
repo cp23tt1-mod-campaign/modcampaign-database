@@ -50,13 +50,13 @@ LOCK TABLES `campaign` WRITE;
 INSERT INTO `campaign` VALUES 
 
 (1,'Fitness Challenge','ชวนคุณมาวิ่งออกกำลังกายรูปแบบใหม่ สไตล์ New Normal เพิ่มพลังให้ปอด ช่วยให้หัวใจแข็งแรง เริ่มวิ่งตั้งแต่วันที่ 20 พ.ย. – 20 ธันวาคม 2565 นี้ ซึ่งโครงการเปิดรับสมัครทั้งสมาชิกพีอาร์ไนน์ และบุคคลทั่วไป โดยการสะสมระยะทางรวมทั้งหมด 55 กม. สถานที่วิ่ง สามารถวิ่งได้ที่สวนสาธารณะ, ถนน, ซอย, ในหมู่บ้าน หรือวิ่งบนลู่ไฟฟ้า ตัดสินผู้ชนะตามระยะทางการวิ่งสะสมมากที่สุดหลังจบโครงการ พร้อมรางวัลมากมาย',
-'2023-11-20 08:00:00','2023-12-20 20:00:00','Individual','1MypsdJZdW_dI-vOPj73-g0G1lXurFHSe', 'ชั่วโมงกิจกรรม 10 ชั่วโมง' ,100,1,1),
-(2,'Education for All','Support education for underprivileged children.','2023-12-01 10:00:00','2023-12-31 18:00:00','Group','14mYFSuAO47M4XgU8hhPftiTU8XjgeHbV','ชั่วโมงกิจกรรม 2 ชั่วโมง' ,50,2,3),
-(3,'Community Cleanup','Volunteer for a cleaner and greener community.','2023-11-25 09:00:00','2023-12-15 17:00:00','Group','1H7gm2116tfNqZwhqH2T5zE6RwsiQyCPx','ขนม 1 แพ็ค',30,3,1),
-(4,'Art Exhibition','Promoting local art and culture through an exhibition.','2023-12-10 12:00:00','2023-12-20 22:00:00','Individual','1p8nBxD42Hy_XR8R9zw29RhNu677ODxmE','Coupon Starbuck',NULL,4,2),
-(5,'Green Initiative','Join us in conserving the environment for a better future.','2023-11-30 14:00:00','2023-12-31 23:59:59','Individual','1w1rMC2LZCu-MSPfQBYqGdlCFrUU04GAY','7-11 Gift Vocher',200,5,1),
-(6,'Bike for dad','มาวิ่งเพื่อพ่อกันนนนนน','2023-11-26 09:00:00','2023-12-26 17:00:00','Individual','1DjbfGHS2SzhYmnFU9CHz_-kx-9M_b4Dw','อันดับ 1 500 บาท อันดับ 2 100 บาท อันดับ 3 50 บาท',200,5,1),
-(7,'Run for mom','มาวิ่งเพื่อแม่กานนน','2023-9-26 09:00:00','2023-10-26 17:00:00','Individual','1lfralmU5KOISUraCbcznPfF1EtvdtZTT','ได้ออกกำลังกาย',200,5,1);
+'2023-11-20 08:00:00','2023-12-20 20:00:00','Individual','Cigna-Run-At-Home-Campaign 1.jpg', 'ชั่วโมงกิจกรรม 10 ชั่วโมง' ,100,1,1),
+(2,'Education for All','Support education for underprivileged children.','2023-12-01 10:00:00','2023-12-31 18:00:00','Group','Landscape-15b7c079.jpg','ชั่วโมงกิจกรรม 2 ชั่วโมง' ,50,2,3),
+(3,'Community Cleanup','Volunteer for a cleaner and greener community.','2023-11-25 09:00:00','2023-12-15 17:00:00','Group','SS20_02 1.jpg','ขนม 1 แพ็ค',30,3,1),
+(4,'Art Exhibition','Promoting local art and culture through an exhibition.','2023-12-10 12:00:00','2023-12-20 22:00:00','Individual','r01 1.jpg','Coupon Starbuck',NULL,4,2),
+(5,'Green Initiative','Join us in conserving the environment for a better future.','2023-11-30 14:00:00','2023-12-31 23:59:59','Individual','run2.jpg','7-11 Gift Vocher',200,5,1),
+(6,'Bike for dad','มาวิ่งเพื่อพ่อกันนนนนน','2023-11-26 09:00:00','2023-12-26 17:00:00','Individual','run3.jpeg','อันดับ 1 500 บาท อันดับ 2 100 บาท อันดับ 3 50 บาท',200,5,1),
+(7,'Run for mom','มาวิ่งเพื่อแม่กานนน','2023-9-26 09:00:00','2023-10-26 17:00:00','Individual','run4.jpeg','ได้ออกกำลังกาย',200,5,1);
 /*!40000 ALTER TABLE `campaign` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -156,6 +156,7 @@ DROP TABLE IF EXISTS `userInCampaign`;
 CREATE TABLE `userInCampaign` (
   `userId` int NOT NULL,
   `campaignId` int NOT NULL,
+--   `userCampaignTargetValue` VARCHAR(50) NULL,
   PRIMARY KEY (`userId`,`campaignId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
