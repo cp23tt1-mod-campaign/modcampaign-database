@@ -51,12 +51,19 @@ INSERT INTO `campaign` VALUES
 
 (1,'Fitness Challenge','ชวนคุณมาวิ่งออกกำลังกายรูปแบบใหม่ สไตล์ New Normal เพิ่มพลังให้ปอด ช่วยให้หัวใจแข็งแรง เริ่มวิ่งตั้งแต่วันที่ 20 พ.ย. – 20 ธันวาคม 2565 นี้ ซึ่งโครงการเปิดรับสมัครทั้งสมาชิกพีอาร์ไนน์ และบุคคลทั่วไป โดยการสะสมระยะทางรวมทั้งหมด 55 กม. สถานที่วิ่ง สามารถวิ่งได้ที่สวนสาธารณะ, ถนน, ซอย, ในหมู่บ้าน หรือวิ่งบนลู่ไฟฟ้า ตัดสินผู้ชนะตามระยะทางการวิ่งสะสมมากที่สุดหลังจบโครงการ พร้อมรางวัลมากมาย',
 '2023-11-20 08:00:00','2023-12-20 20:00:00','Individual','Cigna-Run-At-Home-Campaign 1.jpg', 'ชั่วโมงกิจกรรม 10 ชั่วโมง' ,100,1,1),
-(2,'Education for All','Support education for underprivileged children.','2023-12-01 10:00:00','2023-12-31 18:00:00','Group','Landscape-15b7c079.jpg','ชั่วโมงกิจกรรม 2 ชั่วโมง' ,50,2,3),
-(3,'Community Cleanup','Volunteer for a cleaner and greener community.','2023-11-25 09:00:00','2023-12-15 17:00:00','Group','SS20_02 1.jpg','ขนม 1 แพ็ค',30,3,1),
-(4,'Art Exhibition','Promoting local art and culture through an exhibition.','2023-12-10 12:00:00','2023-12-20 22:00:00','Individual','r01 1.jpg','Coupon Starbuck',NULL,4,2),
-(5,'Green Initiative','Join us in conserving the environment for a better future.','2023-11-30 14:00:00','2023-12-31 23:59:59','Individual','run2.jpg','7-11 Gift Vocher',200,5,1),
-(6,'Bike for dad','มาวิ่งเพื่อพ่อกันนนนนน','2023-11-26 09:00:00','2023-12-26 17:00:00','Individual','run3.jpeg','อันดับ 1 500 บาท อันดับ 2 100 บาท อันดับ 3 50 บาท',200,5,1),
-(7,'Run for mom','มาวิ่งเพื่อแม่กานนน','2023-9-26 09:00:00','2023-10-26 17:00:00','Individual','run4.jpeg','ได้ออกกำลังกาย',200,5,1);
+
+(2,'Run for a Cause', 'Run to raise funds for charity', '2023-12-07 08:00:00', '2024-12-30 18:00:00', 'Individual', 'Landscape-15b7c079.jpg', 'Medal and Certificate', 100, 1, 1),
+(3,'Healthy Steps Challenge', 'Walk or run to promote a healthy lifestyle', '2023-11-05 10:00:00', '2024-12-15 20:00:00', 'Group', 'SS20_02 1.jpg', 'Fitness Tracker', 50, 2, 2),
+(4,'Fun Run Day', 'Enjoy a fun run with friends and family', '2023-12-10 09:30:00', '2024-06-30 12:00:00', 'Individual', 'r01 1.jpg', 'Participation Medal', 200, 1, 3),
+(5,'Nature Trail Adventure', 'Explore nature with a group hike', '2023-12-01 07:00:00', '2024-06-07 16:00:00', 'Group', 'run2.jpg', 'Nature Explorer Kit', 30, 2, 4),
+(6,'Marathon Madness', 'Join the marathon and test your limits', '2023-12-10 06:00:00', '2024-12-30 18:00:00', 'Individual', 'marathon.jpeg', 'Finisher T-Shirt', 150, 1, 5),
+(7,'Community Bike Ride', 'Pedal together for a community bike ride', '2023-10-13 13:00:00', '2024-11-14 16:30:00', 'Group', 'run4.jpeg', 'Bike Ride Medal', 40, 2, 2),
+(8,'Yoga in the Park', 'Relax with a group yoga session outdoors', '2023-07-10 08:30:00', '2024-07-10 10:30:00', 'Group', 'yoga.jpg', 'Yoga Mat', 25, 2, 1),
+(9,'Virtual 5K Challenge', 'Run your 5K at your own pace, anywhere', '2023-12-01 00:00:00', '2024-12-14 23:59:59', 'Individual', 'runAtHome.jpg', 'Virtual Badge', 100, 1, 1),
+
+(10,'Old Marathon Challenge', 'Past marathon event', '2022-11-15 07:30:00', '2022-11-20 15:00:00', 'Individual', 'run3.jpeg', 'Finisher Medal', 200, 1, 1),
+(11,'Community Walk', 'Group walking event', '2023-03-01 09:00:00', '2023-03-10 17:30:00', 'Group', 'communitywalk.jpeg', 'Participation Certificate', 30, 2, 1);
+
 /*!40000 ALTER TABLE `campaign` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -82,7 +89,8 @@ CREATE TABLE `campaignCategory` (
 
 LOCK TABLES `campaignCategory` WRITE;
 /*!40000 ALTER TABLE `campaignCategory` DISABLE KEYS */;
-INSERT INTO `campaignCategory` VALUES (1,'Run','step'),(2,'Education','Supporting education initiatives'),(3,'Health and Fitness','Stay active and fit'),(4,'Arts and Culture','Promoting arts and cultural activities'),(5,'Environment','Environment conservation and awareness');
+INSERT INTO `campaignCategory` VALUES (1,'Run','Distance'),
+(2,'Walking','Steps');
 /*!40000 ALTER TABLE `campaignCategory` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -122,17 +130,19 @@ DROP TABLE IF EXISTS `user`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user` (
   `userId` int NOT NULL AUTO_INCREMENT,
-  `username` varchar(50) NOT NULL,
-  `password` varchar(150) NOT NULL,
   `firstName` varchar(50) NOT NULL,
   `lastName` varchar(50) NOT NULL,
-  `bmi` int NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `profileImage` varchar(100) NOT NULL,
+  `gender` varchar(10) NOT NULL,
+  `age` int NOT NULL,
   `height` int NOT NULL,
   `weight` int NOT NULL,
-  `calories` varchar(45) NOT NULL,
-  `role` enum('Creator','Attendess') NOT NULL,
-  `healthPlatform` varchar(50) NOT NULL,
-  PRIMARY KEY (`userId`)
+  `activityLevel` int NOT NULL,
+  `bmr` int NOT NULL,
+  `role` enum('Creator','Attendees') NOT NULL,
+  PRIMARY KEY (`userId`),
+  UNIQUE KEY `email_UNIQUE` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -142,7 +152,13 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'jirasinAdmin','password123','Jirasin','Chatbanyong',25,180,75,'2000','Creator','AppleHealth'),(2,'naruebet','pass456','Naruebet','Pattarasanya',22,165,60,'1800','Attendess','GoogleFit'),(3,'creator1','securePass','Bob','Smith',27,175,80,'2200','Creator','AppleHealth'),(4,'attendee1','secret','Eva','Williams',23,160,55,'1600','Attendess','AppleHealth'),(5,'napasorn','adminPass','Napasorn','Pattanadecha',29,185,90,'2500','Creator','AppleHealth');
+INSERT INTO `user` VALUES 
+(1,'Jirasin','Chatbanyong','jirasin4826@gmail.com','ACg8ocJIph1BSeoMu91LOcZYoPv1SgWPehzSWiB_6ch03iiGfXez=s96-c'
+,'male',21,165,56,2,1515,'Creator'),
+(2,'John', 'Doe', 'john.doe@example.com', 'profile1.jpg', 'male', 25, 175, 70, 2, 1800, 'Attendees'),
+(3,'Jane', 'Smith', 'jane.smith@example.com', 'profile2.jpg', 'female', 30, 160, 55, 3, 2000, 'Attendees'),
+(4,'Alice', 'Johnson', 'alice.johnson@example.com', 'profile3.jpg', 'female', 28, 168, 63, 1, 1600, 'Attendees'),
+(5,'Bob', 'Williams', 'bob.williams@example.com', 'profile4.jpg', 'male', 35, 180, 80, 2, 1900, 'Attendees');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
