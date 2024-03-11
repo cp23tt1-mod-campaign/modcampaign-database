@@ -95,6 +95,33 @@ INSERT INTO `campaignCategory` VALUES (1,'Run','Distance'),
 UNLOCK TABLES;
 
 --
+-- Table structure for table `discover`
+--
+
+DROP TABLE IF EXISTS `discover`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `discover` (
+  `discoverId` int NOT NULL AUTO_INCREMENT,
+  `discoverName` varchar(50) NOT NULL,
+  `discoverDate` date NOT NULL,
+  `discoverLink` varchar(100) NOT NULL,
+  `discoverImage` varchar(100) NOT NULL,
+  PRIMARY KEY (`discoverId`),
+  UNIQUE KEY `campaignName_UNIQUE` (`discoverName`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `discover`
+--
+
+LOCK TABLES `discover` WRITE;
+/*!40000 ALTER TABLE `discover` DISABLE KEYS */;
+INSERT INTO `discover` VALUES (1,'a','2023-10-13','d','d');
+/*!40000 ALTER TABLE `discover` ENABLE KEYS */;
+UNLOCK TABLES;
+--
 -- Table structure for table `feedback`
 --
 
@@ -173,7 +200,7 @@ DROP TABLE IF EXISTS `userInCampaign`;
 CREATE TABLE `userInCampaign` (
   `userId` int NOT NULL,
   `campaignId` int NOT NULL,
-  `targetValue` decimal NOT NULL,
+  `targetValue` float NOT NULL,
 --   `userCampaignTargetValue` VARCHAR(50) NULL,
   PRIMARY KEY (`userId`,`campaignId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
@@ -186,9 +213,9 @@ CREATE TABLE `userInCampaign` (
 LOCK TABLES `userInCampaign` WRITE;
 /*!40000 ALTER TABLE `userInCampaign` DISABLE KEYS */;
 INSERT INTO `userInCampaign` VALUES 
-(1,1, 5.00),
+(1,1, 5),
 (1,2, 7.00),
-(1,3, 2000.00),
+(1,3, 2351.33),
 (2,1, 100.00),
 (2,3, 100.00),
 (3,2, 100.00),
