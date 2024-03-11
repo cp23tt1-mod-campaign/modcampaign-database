@@ -132,6 +132,7 @@ CREATE TABLE `user` (
   `userId` int NOT NULL AUTO_INCREMENT,
   `firstName` varchar(50) NOT NULL,
   `lastName` varchar(50) NOT NULL,
+  `displayName` varchar(100) NOT NULL,
   `email` varchar(50) NOT NULL,
   `profileImage` varchar(100) NOT NULL,
   `gender` varchar(10) NOT NULL,
@@ -153,12 +154,12 @@ CREATE TABLE `user` (
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` VALUES 
-(1,'Jirasin','Chatbanyong','jirasin4826@gmail.com','ACg8ocJIph1BSeoMu91LOcZYoPv1SgWPehzSWiB_6ch03iiGfXez=s96-c'
+(1,'Jirasin','Chatbanyong','qqqxq','jirasin4826@gmail.com','ACg8ocJIph1BSeoMu91LOcZYoPv1SgWPehzSWiB_6ch03iiGfXez=s96-c'
 ,'male',21,165,56,2,1515,'Creator'),
-(2,'John', 'Doe', 'john.doe@example.com', 'profile1.jpg', 'male', 25, 175, 70, 2, 1800, 'Attendees'),
-(3,'Jane', 'Smith', 'jane.smith@example.com', 'profile2.jpg', 'female', 30, 160, 55, 3, 2000, 'Attendees'),
-(4,'Alice', 'Johnson', 'alice.johnson@example.com', 'profile3.jpg', 'female', 28, 168, 63, 1, 1600, 'Attendees'),
-(5,'Bob', 'Williams', 'bob.williams@example.com', 'profile4.jpg', 'male', 35, 180, 80, 2, 1900, 'Attendees');
+(2,'John', 'Doe', 'DohnJoe','john.doe@example.com', 'profile1.jpg', 'male', 25, 175, 70, 2, 1800, 'Attendees'),
+(3,'Jane', 'Smith', 'BlxckSmxth','jane.smith@example.com', 'profile2.jpg', 'female', 30, 160, 55, 3, 2000, 'Attendees'),
+(4,'Alice', 'Johnson', 'AliceBob','alice.johnson@example.com', 'profile3.jpg', 'female', 28, 168, 63, 1, 1600, 'Attendees'),
+(5,'Bob', 'Williams', 'Will you marry me', 'bob.williams@example.com', 'profile4.jpg', 'male', 35, 180, 80, 2, 1900, 'Attendees');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -172,6 +173,7 @@ DROP TABLE IF EXISTS `userInCampaign`;
 CREATE TABLE `userInCampaign` (
   `userId` int NOT NULL,
   `campaignId` int NOT NULL,
+  `targetValue` decimal NOT NULL,
 --   `userCampaignTargetValue` VARCHAR(50) NULL,
   PRIMARY KEY (`userId`,`campaignId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
@@ -183,7 +185,21 @@ CREATE TABLE `userInCampaign` (
 
 LOCK TABLES `userInCampaign` WRITE;
 /*!40000 ALTER TABLE `userInCampaign` DISABLE KEYS */;
-INSERT INTO `userInCampaign` VALUES (1,1),(1,2),(1,3),(2,1),(2,3),(3,2),(3,3),(3,4),(4,1),(4,3),(5,1),(5,2),(5,3),(5,5);
+INSERT INTO `userInCampaign` VALUES 
+(1,1, 5.00),
+(1,2, 7.00),
+(1,3, 2000.00),
+(2,1, 100.00),
+(2,3, 100.00),
+(3,2, 100.00),
+(3,3, 100.00),
+(3,4, 100.00),
+(4,1, 100.00),
+(4,3, 100.00),
+(5,1, 100.00),
+(5,2, 100.00),
+(5,3, 100.00),
+(5,5, 100.00);
 /*!40000 ALTER TABLE `userInCampaign` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
